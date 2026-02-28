@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth scroll-pt-24">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="WaSHVoice Africa Projects: Explore our on-the-ground impact, flagship reports, and community initiatives." />
+    <title>Our Projects & Impact | WaSHVoice Africa</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            primary: '#0369a1',
+                            accent: '#0891b2',
+                            light: '#e0f2fe'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Image hover zoom effect */
+        .project-card:hover .project-img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 antialiased bg-slate-50 overflow-x-hidden pt-20 lg:pt-0">
+
+    <header class="fixed w-full top-0 z-50 border-b border-slate-200/70 bg-white/95 backdrop-blur-md transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 lg:px-8 h-20 flex items-center justify-between">
+            <a href="./index.html" class="flex items-center gap-3 group shrink-0">
+                <img src="./assets/images/logo.png" alt="WaSHVoice logo" class="h-12 w-auto object-contain" onerror="this.style.display='none'" />
+                <div class="flex flex-col">
+                    <span class="font-extrabold text-brand-dark text-xl tracking-tight group-hover:text-brand-accent transition-colors">WaSHVoice</span>
+                    <span class="text-[10px] font-bold tracking-widest text-slate-500 uppercase">Africa</span>
+                </div>
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
+                <a href="./index.html" class="text-slate-600 hover:text-brand-accent font-medium transition-colors">Home</a>
+                <a href="./about.html" class="text-slate-600 hover:text-brand-accent font-medium transition-colors">About</a>
+                <a href="./services.html" class="text-slate-600 hover:text-brand-accent font-medium transition-colors">Services</a>
+                <a href="./projects.html" class="text-brand-accent font-semibold border-b-2 border-brand-accent pb-1">Projects</a>
+                <a href="./team.html" class="text-slate-600 hover:text-brand-accent font-medium transition-colors">Team</a>
+                <a href="./events.html" class="text-slate-600 hover:text-brand-accent font-medium transition-colors">Events</a>
+                <a href="./gallery.html" class="text-slate-600 hover:text-brand-accent font-medium transition-colors">Gallery</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-4 shrink-0">
+                <div class="hidden xl:flex gap-3 border-r border-slate-300 pr-4">
+                    <a href="#" class="text-slate-400 hover:text-[#1877F2] transition-colors"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-black transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-[#FF0000] transition-colors"><i class="fab fa-youtube"></i></a>
+                </div>
+                
+                <a href="path/to/SanAcc-I-Report.pdf" target="_blank" class="hidden md:flex items-center gap-2 border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white px-4 py-2 rounded-full font-bold transition-all text-sm group">
+                    <i class="fas fa-file-pdf group-hover:animate-bounce"></i> SanAcc I Report
+                </a>
+
+                <a href="./contact.html" class="bg-brand-accent hover:bg-cyan-500 text-white px-6 py-2.5 rounded-full font-semibold transition-all shadow-md hover:shadow-lg text-sm">Partner With Us</a>
+            </div>
+
+            <button id="menuBtn" class="lg:hidden text-slate-700 text-2xl focus:outline-none hover:text-brand-accent transition-colors">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <nav id="mobileNav" class="hidden lg:hidden bg-white border-t border-slate-200 px-4 pt-2 pb-6 absolute w-full shadow-xl">
+            <div class="flex flex-col gap-4 mt-2">
+                <a href="./index.html" class="text-slate-600 text-lg hover:text-brand-accent">Home</a>
+                <a href="./about.html" class="text-slate-600 text-lg hover:text-brand-accent">About</a>
+                <a href="./services.html" class="text-slate-600 text-lg hover:text-brand-accent">Services</a>
+                <a href="./projects.html" class="text-brand-accent font-semibold text-lg">Projects</a>
+                <a href="./team.html" class="text-slate-600 text-lg hover:text-brand-accent">Team</a>
+                <a href="./events.html" class="text-slate-600 text-lg hover:text-brand-accent">Events</a>
+                <a href="./gallery.html" class="text-slate-600 text-lg hover:text-brand-accent">Gallery</a>
+                
+                <div class="mt-4 border-t border-slate-100 pt-4 flex flex-col gap-3">
+                    <a href="path/to/SanAcc-I-Report.pdf" target="_blank" class="flex justify-center items-center gap-2 border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white transition-colors px-4 py-3 rounded-xl font-bold">
+                        <i class="fas fa-file-pdf"></i> Download SanAcc I Report
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="py-16 md:py-24 bg-brand-dark relative mt-20 lg:mt-0 overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-20">
+            <img src="https://images.unsplash.com/photo-1541812845662-794ec1d07c08?auto=format&fit=crop&q=80" alt="Projects Background" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/90 to-transparent"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 lg:px-8 relative z-10 text-center reveal">
+            <div class="inline-flex items-center gap-2 rounded-full border border-brand-accent/30 bg-brand-accent/10 backdrop-blur-sm px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-brand-light mb-6">
+                <i class="fas fa-map-location-dot text-[10px]"></i> Action & Implementation
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight tracking-tight max-w-4xl mx-auto">
+                Our Projects & <br class="hidden md:block"/> <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-light">On-The-Ground Impact.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-300 leading-relaxed font-light mb-10 max-w-2xl mx-auto">
+                From high-level accountability reports to community-driven facility upgrades, discover how we translate strategy into tangible results.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white relative border-b border-slate-200 overflow-hidden">
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-slate-50 rounded-full blur-3xl -mr-64 -mt-32 z-0"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 lg:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row gap-12 lg:gap-20 items-center reveal">
+                <div class="w-full md:w-1/2 relative group rounded-[2.5rem] overflow-hidden shadow-2xl aspect-square md:aspect-auto md:h-[600px]">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80" alt="SanAcc Data Analysis" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent to-transparent"></div>
+                    
+                    <div class="absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur-md p-6 rounded-2xl shadow-xl flex items-center justify-between border border-white/20">
+                        <div>
+                            <p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Status</p>
+                            <p class="text-brand-accent font-extrabold">Published & Active</p>
+                        </div>
+                        <div class="w-12 h-12 bg-brand-primary/10 rounded-full flex items-center justify-center text-brand-primary">
+                            <i class="fas fa-check text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-1/2">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-brand-accent/10 text-brand-accent text-xs font-bold uppercase rounded-full mb-4 border border-brand-accent/20">Flagship Initiative</div>
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-brand-dark mb-6 leading-tight">Sanitation Accountability (SanAcc) Reports</h2>
+                    <p class="text-lg text-slate-600 leading-relaxed mb-6">
+                        The SanAcc initiatives form the empirical backbone of our advocacy. By meticulously tracking data, investments, and service delivery across the sector, we hold institutions accountable and guide future investments.
+                    </p>
+                    
+                    <div class="space-y-6 mb-10">
+                        <div class="flex gap-4 p-5 rounded-2xl border border-slate-100 bg-slate-50 hover:border-brand-accent/50 transition-colors">
+                            <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center shrink-0 text-brand-dark">
+                                <i class="fas fa-book text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-brand-dark mb-1">SanAcc I Report</h4>
+                                <p class="text-slate-600 text-sm leading-relaxed mb-3">Our foundational sectoral diagnostic, establishing baseline metrics for WaSH service equity and governance.</p>
+                                <a href="path/to/SanAcc-I-Report.pdf" target="_blank" class="text-brand-primary text-sm font-semibold hover:text-brand-accent flex items-center gap-2">Download Report <i class="fas fa-download"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 p-5 rounded-2xl border border-brand-accent/20 bg-brand-light/20 relative overflow-hidden">
+                            <div class="absolute top-0 right-0 bg-brand-accent text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg">NEW</div>
+                            <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center shrink-0 text-brand-accent">
+                                <i class="fas fa-book-open text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-brand-dark mb-1">SanAcc II (2025)</h4>
+                                <p class="text-slate-600 text-sm leading-relaxed mb-3">The latest evolution of our accountability framework, tracking the ROI of investments and policy shifts over the last year.</p>
+                                <a href="#" class="text-brand-accent text-sm font-semibold hover:text-brand-primary flex items-center gap-2">Explore Findings <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-slate-50 relative">
+        <div class="max-w-7xl mx-auto px-4 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <h4 class="text-brand-accent font-bold tracking-widest uppercase text-sm mb-3">Community & Infrastructure</h4>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-brand-dark mb-6 tracking-tight">Active Projects Portfolio.</h2>
+                <p class="text-lg text-slate-600 leading-relaxed">Implementing our four pillars through targeted campaigns, capacity building, and localized infrastructure upgrades.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="bg-white rounded-[2rem] border border-slate-100 shadow-lg hover:shadow-2xl transition-all duration-300 group overflow-hidden project-card reveal flex flex-col">
+                    <div class="h-60 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&q=80" alt="Students in Classroom" class="w-full h-full object-cover project-img transition-transform duration-700">
+                        <div class="absolute top-4 left-4 bg-white/95 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-brand-primary shadow-sm">
+                            <i class="fas fa-school mr-1"></i> Education
+                        </div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <h3 class="text-xl font-bold text-brand-dark mb-3">The "Young WaSH Voice" Campaign</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
+                            A mentorship and infrastructure upgrade initiative focused on schools. We provide Menstrual Hygiene Management (MHM) support to reduce absenteeism and empower the next generation.
+                        </p>
+                        <div class="border-t border-slate-100 pt-4 mt-auto">
+                            <span class="text-xs text-slate-500 uppercase tracking-widest font-semibold block mb-1">Target Group</span>
+                            <span class="text-brand-dark font-medium text-sm">Schools & Students</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-[2rem] border border-slate-100 shadow-lg hover:shadow-2xl transition-all duration-300 group overflow-hidden project-card reveal delay-100 flex flex-col">
+                    <div class="h-60 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80" alt="Women Empowerment" class="w-full h-full object-cover project-img transition-transform duration-700">
+                        <div class="absolute top-4 left-4 bg-white/95 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-brand-accent shadow-sm">
+                            <i class="fas fa-venus mr-1"></i> Empowerment
+                        </div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <h3 class="text-xl font-bold text-brand-dark mb-3">Women & Girls Dignity Project</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
+                            Improving privacy and personal safety through dedicated facility upgrades. This project focuses on economic "time" empowerment and reducing gender-based risks associated with poor WaSH access.
+                        </p>
+                        <div class="border-t border-slate-100 pt-4 mt-auto">
+                            <span class="text-xs text-slate-500 uppercase tracking-widest font-semibold block mb-1">Target Group</span>
+                            <span class="text-brand-dark font-medium text-sm">Women & Vulnerable Groups</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-[2rem] border border-slate-100 shadow-lg hover:shadow-2xl transition-all duration-300 group overflow-hidden project-card reveal delay-200 flex flex-col">
+                    <div class="h-60 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80" alt="Sanitation Innovation" class="w-full h-full object-cover project-img transition-transform duration-700">
+                        <div class="absolute top-4 left-4 bg-white/95 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-sky-600 shadow-sm">
+                            <i class="fas fa-lightbulb mr-1"></i> Innovation
+                        </div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <h3 class="text-xl font-bold text-brand-dark mb-3">Sanitation Pavilion Program</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
+                            A strategic networking and "matchmaking" platform that connects sanitation innovators and technologists with local communities to validate user-centric, climate-resilient designs.
+                        </p>
+                        <div class="border-t border-slate-100 pt-4 mt-auto">
+                            <span class="text-xs text-slate-500 uppercase tracking-widest font-semibold block mb-1">Target Group</span>
+                            <span class="text-brand-dark font-medium text-sm">Innovators & WSPs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-[2rem] border border-slate-100 shadow-lg hover:shadow-2xl transition-all duration-300 group overflow-hidden project-card reveal flex flex-col lg:col-span-3 lg:flex-row mt-8">
+                    <div class="lg:w-1/2 h-64 lg:h-auto overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&q=80" alt="Facility Upgrades" class="w-full h-full object-cover project-img transition-transform duration-700">
+                        <div class="absolute inset-0 bg-brand-dark/20"></div>
+                    </div>
+                    <div class="lg:w-1/2 p-10 flex flex-col justify-center">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-emerald-50 text-emerald-600 text-xs font-bold uppercase rounded-full mb-4 w-fit border border-emerald-100">
+                            <i class="fas fa-hammer"></i> Infrastructure
+                        </div>
+                        <h3 class="text-2xl md:text-3xl font-bold text-brand-dark mb-4">Community Facility Enhancements</h3>
+                        <p class="text-slate-600 leading-relaxed mb-6">
+                            Moving beyond temporary fixes, we co-create functional sanitation facilities using Participatory Rural Appraisal (PRA) methods. By ensuring facilities meet exact cultural and physical needs, we prevent dependency and guarantee long-term environmental protection.
+                        </p>
+                        <ul class="space-y-3 mb-8 text-sm text-slate-600">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-brand-accent"></i> Community Ownership Models</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-brand-accent"></i> Climate-Smart Infrastructure Design</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-brand-accent"></i> Localized Technical Training</li>
+                        </ul>
+                        <a href="./contact.html" class="inline-flex items-center gap-2 bg-brand-dark text-white px-6 py-3 rounded-full font-bold hover:bg-brand-primary transition-colors w-fit text-sm">
+                            Support a Community Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-dark text-slate-300 pt-20 pb-10 border-t-4 border-brand-accent relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-80 h-80 bg-brand-primary/20 rounded-full blur-3xl -mr-32 -mt-32"></div>
+        <div class="max-w-7xl mx-auto px-4 lg:px-8 grid md:grid-cols-12 gap-12 mb-16 relative z-10">
+            
+            <div class="md:col-span-4">
+                <a href="./index.html" class="flex items-center gap-3 mb-6 bg-white/5 p-3 rounded-lg w-fit group">
+                    <img src="./assets/images/logo.png" alt="WaSHVoice logo" class="h-10 w-auto" onerror="this.style.display='none'" />
+                    <span class="font-extrabold text-white text-xl tracking-tight">WaSHVoice <span class="text-brand-accent group-hover:text-brand-light transition-colors">Africa</span></span>
+                </a>
+                <p class="text-sm leading-relaxed text-slate-400 mb-6 max-w-sm">
+                    A purpose-driven social enterprise disrupting traditional service silos through integrated advocacy, sector coordination, and climate action.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-accent hover:text-white transition-all"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-accent hover:text-white transition-all"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-accent hover:text-white transition-all"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="md:col-span-3 md:col-start-6">
+                <h4 class="text-white font-bold mb-6 tracking-wide">Strategy 2025–2027</h4>
+                <ul class="space-y-4 text-xs text-slate-400">
+                    <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-brand-accent shrink-0"></span>Generating $5.50 economic value/$1 invested.</li>
+                    <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-brand-primary shrink-0"></span>Unlocking 10x blended finance matching debt.</li>
+                    <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-sky-500 shrink-0"></span>National Sanitation Database 2.0 by 2027.</li>
+                </ul>
+                <h4 class="text-white font-bold mt-8 mb-4 tracking-wide">Quick Links</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="./index.html" class="hover:text-brand-accent transition-colors">Home</a></li>
+                    <li><a href="./services.html" class="hover:text-brand-accent transition-colors">Our Services</a></li>
+                    <li><a href="./projects.html" class="hover:text-brand-accent transition-colors">Impact & Projects</a></li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-3 md:col-start-10">
+                <h4 class="text-white font-bold mb-6 tracking-wide">Get in Touch</h4>
+                <ul class="space-y-4 text-sm text-slate-400">
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-map-marker-alt text-brand-accent mt-1 shrink-0"></i>
+                        <span>Western Heights, Westlands<br>Nairobi, Kenya</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-phone-alt text-brand-accent shrink-0"></i>
+                        <a href="tel:+254722981370" class="hover:text-white transition-colors">+254 722 981 370</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-envelope text-brand-accent shrink-0"></i>
+                        <a href="mailto:info@washvoiceafrica.org" class="hover:text-white transition-colors">info@washvoiceafrica.org</a>
+                    </li>
+                </ul>
+                
+                <div class="mt-8 border-t border-slate-700 pt-6">
+                    <p class="text-xs text-slate-500 mb-4">Mon – Sat: 8:00 – 17:00<br>Sunday: CLOSED</p>
+                    <div class="flex gap-4 text-brand-accent/50">
+                        <i class="fas fa-certificate text-xl hover:text-brand-accent transition-colors cursor-pointer"></i>
+                        <i class="fas fa-ribbon text-xl hover:text-brand-accent transition-colors cursor-pointer"></i>
+                        <i class="fas fa-water text-xl hover:text-brand-accent transition-colors cursor-pointer"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 lg:px-8 pt-8 border-t border-slate-800 text-center md:text-left flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 relative z-10">
+            <p>&copy; 2026 Water Sanitation and Hygiene Voice (WaSHVoice). All rights reserved.</p>
+            <p class="mt-2 md:mt-0">Designed & Optimized for Systemic Impact.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        const icon = menuBtn.querySelector('i');
+
+        menuBtn.addEventListener('click', () => {
+            mobileNav.classList.toggle('hidden');
+            if(mobileNav.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+
+        // Scroll Reveal Animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach((elem) => {
+            observer.observe(elem);
+        });
+    </script>
+</body>
+</html>

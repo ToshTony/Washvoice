@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth scroll-pt-24">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Meet the WaSHVoice Africa Team. Expert leadership driving advocacy, equity, and resilience in Kenya's WaSH sector." />
+    <title>Our Team | WaSHVoice Africa - Resilient Human Capital</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            primary: '#0369a1',
+                            accent: '#0891b2',
+                            light: '#e0f2fe'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 antialiased bg-slate-50 overflow-x-hidden pt-20 lg:pt-0">
+
+    <header class="fixed w-full top-0 z-50 border-b border-slate-200/70 bg-white/95 backdrop-blur-md transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 lg:px-8 h-20 flex items-center justify-between">
+            <a href="./index.html" class="flex items-center gap-3 group shrink-0">
+                <img src="./assets/images/logo.png" alt="WaSHVoice logo" class="h-12 w-auto object-contain" onerror="this.style.display='none'" />
+                <div class="flex flex-col">
+                    <span class="font-extrabold text-brand-dark text-xl tracking-tight group-hover:text-brand-accent transition-colors">WaSHVoice</span>
+                    <span class="text-[10px] font-bold tracking-widest text-slate-500 uppercase">Africa</span>
+                </div>
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
+                <a href="./index.html" class="text-slate-600 hover:text-brand-accent font-medium transition-colors">Home</a>
+                <a href="./about.html" class="text-slate-600 hover:text-brand-accent font-medium transition-colors">About</a>
+                <a href="./services.html" class="text-slate-600 hover:text-brand-accent font-medium transition-colors">Services</a>
+                <a href="./projects.html" class="text-slate-600 hover:text-brand-accent font-medium transition-colors">Projects</a>
+                <a href="./team.html" class="text-brand-accent font-semibold border-b-2 border-brand-accent pb-1">Team</a>
+                <a href="./events.html" class="text-slate-600 hover:text-brand-accent font-medium transition-colors">Events</a>
+                <a href="./gallery.html" class="text-slate-600 hover:text-brand-accent font-medium transition-colors">Gallery</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-4 shrink-0">
+                <div class="hidden xl:flex gap-3 border-r border-slate-300 pr-4">
+                    <a href="#" class="text-slate-400 hover:text-[#1877F2] transition-colors"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-black transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-[#FF0000] transition-colors"><i class="fab fa-youtube"></i></a>
+                </div>
+                
+                <a href="path/to/SanAcc-I-Report.pdf" target="_blank" class="hidden md:flex items-center gap-2 border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white px-4 py-2 rounded-full font-bold transition-all text-sm group">
+                    <i class="fas fa-file-pdf group-hover:animate-bounce"></i> SanAcc I Report
+                </a>
+
+                <a href="./contact.html" class="bg-brand-accent hover:bg-cyan-500 text-white px-6 py-2.5 rounded-full font-semibold transition-all shadow-md hover:shadow-lg text-sm">Partner With Us</a>
+            </div>
+
+            <button id="menuBtn" class="lg:hidden text-slate-700 text-2xl focus:outline-none hover:text-brand-accent transition-colors">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <nav id="mobileNav" class="hidden lg:hidden bg-white border-t border-slate-200 px-4 pt-2 pb-6 absolute w-full shadow-xl">
+            <div class="flex flex-col gap-4 mt-2">
+                <a href="./index.html" class="text-slate-600 text-lg hover:text-brand-accent">Home</a>
+                <a href="./about.html" class="text-slate-600 text-lg hover:text-brand-accent">About</a>
+                <a href="./services.html" class="text-slate-600 text-lg hover:text-brand-accent">Services</a>
+                <a href="./projects.html" class="text-slate-600 text-lg hover:text-brand-accent">Projects</a>
+                <a href="./team.html" class="text-brand-accent font-semibold text-lg">Team</a>
+                <a href="./events.html" class="text-slate-600 text-lg hover:text-brand-accent">Events</a>
+                <a href="./gallery.html" class="text-slate-600 text-lg hover:text-brand-accent">Gallery</a>
+                
+                <div class="mt-4 border-t border-slate-100 pt-4 flex flex-col gap-3">
+                    <a href="path/to/SanAcc-I-Report.pdf" target="_blank" class="flex justify-center items-center gap-2 border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white transition-colors px-4 py-3 rounded-xl font-bold">
+                        <i class="fas fa-file-pdf"></i> Download SanAcc I Report
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="py-16 md:py-24 bg-brand-dark relative mt-20 lg:mt-0 overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-20">
+            <img src="https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?auto=format&fit=crop&q=80" alt="Team Leadership" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/90 to-transparent"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 lg:px-8 relative z-10 text-center reveal">
+            <div class="inline-flex items-center gap-2 rounded-full border border-brand-accent/30 bg-brand-accent/10 backdrop-blur-sm px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-brand-light mb-6">
+                <i class="fas fa-users text-[10px]"></i> Expert Leadership
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight tracking-tight max-w-4xl mx-auto">
+                Cultivating Resilient <br class="hidden md:block"/> <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-light">Human Capital.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-300 leading-relaxed font-light mb-10 max-w-2xl mx-auto">
+                Meet the strategic minds driving systemic change. Our team bridges the gap between high-level policy and community impact across Kenya.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-24 bg-slate-50 relative border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <h4 class="text-brand-accent font-bold tracking-widest uppercase text-sm mb-3">Board & Directors</h4>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-brand-dark mb-6 tracking-tight">The WaSHVoice Leadership.</h2>
+                <p class="text-lg text-slate-600 leading-relaxed">Dedicated professionals utilizing niche expertise to unify fragmented sector actors and ensure ecological stewardship.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+                
+                <div class="bg-white rounded-[2rem] border border-slate-100 shadow-lg hover:shadow-2xl transition-all duration-300 group overflow-hidden reveal">
+                    <div class="h-64 overflow-hidden relative bg-slate-200">
+                        <img src="content/Elizabeth-2023.jpeg" alt="Elizabeth Wambui Mwangi" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 grayscale group-hover:grayscale-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 to-transparent opacity-80"></div>
+                        <div class="absolute bottom-4 left-6">
+                            <h3 class="text-2xl font-bold text-white">Elizabeth Wambui Mwangi</h3>
+                            <p class="text-brand-accent font-semibold text-sm">Team Leader & Program Director</p>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 border-b border-slate-100 pb-6">
+                            Elizabeth spearheads the strategic implementation of WaSH programs, focusing on transforming basic access into a just, inclusive, and rights-based service delivery model.
+                        </p>
+                        <div class="space-y-3 mb-6">
+                            <a href="tel:+254722981370" class="flex items-center gap-3 text-sm text-slate-600 hover:text-brand-accent transition-colors"><i class="fas fa-phone-alt text-brand-accent/70"></i> +254 722 981 370</a>
+                            <a href="mailto:info@washvoiceafrica.org" class="flex items-center gap-3 text-sm text-slate-600 hover:text-brand-accent transition-colors"><i class="fas fa-envelope text-brand-accent/70"></i> info@washvoiceafrica.org</a>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="#" class="w-10 h-10 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-400 hover:bg-brand-primary hover:text-white hover:border-brand-primary transition-all"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-400 hover:bg-brand-primary hover:text-white hover:border-brand-primary transition-all"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-400 hover:bg-brand-primary hover:text-white hover:border-brand-primary transition-all"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-[2rem] border border-slate-100 shadow-lg hover:shadow-2xl transition-all duration-300 group overflow-hidden reveal delay-100">
+                    <div class="h-64 overflow-hidden relative bg-slate-200">
+                        <img src="content/Engr_Daniel_Nganga-3.png" alt="Engr. Daniel K. Ng'ang'a" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 grayscale group-hover:grayscale-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 to-transparent opacity-80"></div>
+                        <div class="absolute bottom-4 left-6">
+                            <h3 class="text-2xl font-bold text-white">Engr. Daniel K. Ng'ang'a</h3>
+                            <p class="text-brand-accent font-semibold text-sm">Co-founder, Strategic & Technical Director</p>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 border-b border-slate-100 pb-6">
+                            As technical lead, Daniel ensures the long-term stewardship of sustainable, high-impact WaSH infrastructure, integrating climate-smart technologies into our models.
+                        </p>
+                        <div class="space-y-3 mb-6">
+                            <a href="tel:+254722981370" class="flex items-center gap-3 text-sm text-slate-600 hover:text-brand-accent transition-colors"><i class="fas fa-phone-alt text-brand-accent/70"></i> +254 722 981 370</a>
+                            <a href="mailto:info@washvoiceafrica.org" class="flex items-center gap-3 text-sm text-slate-600 hover:text-brand-accent transition-colors"><i class="fas fa-envelope text-brand-accent/70"></i> info@washvoiceafrica.org</a>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="#" class="w-10 h-10 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-400 hover:bg-brand-primary hover:text-white hover:border-brand-primary transition-all"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-400 hover:bg-brand-primary hover:text-white hover:border-brand-primary transition-all"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-400 hover:bg-brand-primary hover:text-white hover:border-brand-primary transition-all"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-[2rem] border border-slate-100 shadow-lg hover:shadow-2xl transition-all duration-300 group overflow-hidden reveal delay-200">
+                    <div class="h-64 overflow-hidden relative bg-slate-200">
+                        <img src="content/Annabel-Waititu.jpg" alt="Annabell Waititu" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 grayscale group-hover:grayscale-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 to-transparent opacity-80"></div>
+                        <div class="absolute bottom-4 left-6">
+                            <h3 class="text-2xl font-bold text-white">Annabell Waititu</h3>
+                            <p class="text-brand-accent font-semibold text-sm">Member, Board of Directors</p>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 border-b border-slate-100 pb-6">
+                            Providing high-level oversight and governance, Annabell ensures WaSHVoice remains fiercely aligned with evidence-based advocacy and long-term organizational accountability.
+                        </p>
+                        <div class="space-y-3 mb-6">
+                            <a href="tel:+254722981370" class="flex items-center gap-3 text-sm text-slate-600 hover:text-brand-accent transition-colors"><i class="fas fa-phone-alt text-brand-accent/70"></i> +254 722 981 370</a>
+                            <a href="mailto:info@washvoiceafrica.org" class="flex items-center gap-3 text-sm text-slate-600 hover:text-brand-accent transition-colors"><i class="fas fa-envelope text-brand-accent/70"></i> info@washvoiceafrica.org</a>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="#" class="w-10 h-10 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-400 hover:bg-brand-primary hover:text-white hover:border-brand-primary transition-all"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-400 hover:bg-brand-primary hover:text-white hover:border-brand-primary transition-all"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-400 hover:bg-brand-primary hover:text-white hover:border-brand-primary transition-all"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white relative">
+        <div class="absolute right-0 top-0 w-1/3 h-full bg-slate-50/50 hidden lg:block"></div>
+        <div class="max-w-7xl mx-auto px-4 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <h4 class="text-brand-primary font-bold tracking-widest uppercase text-sm mb-3">Goal 2: Capacity Building</h4>
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-brand-dark mb-6 leading-tight">Institutionalizing <br/> <span class="text-brand-accent">Professional Standards.</span></h2>
+                    <p class="text-lg text-slate-600 leading-relaxed mb-8">
+                        Our leadership team doesn't just manage projects; they are building a highly skilled, adaptive workforce for the entire sector.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-cyan-50 rounded-xl flex items-center justify-center shrink-0">
+                                <i class="fas fa-certificate text-brand-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-brand-dark mb-1">Professional Standards Certification</h4>
+                                <p class="text-slate-600 text-sm leading-relaxed">By 2026, our team is establishing industry-led voluntary standards to professionalize the WaSH workforce and elevate service delivery.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-sky-50 rounded-xl flex items-center justify-center shrink-0">
+                                <i class="fas fa-seedling text-brand-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-brand-dark mb-1">Sani-Entrepreneurship Hub</h4>
+                                <p class="text-slate-600 text-sm leading-relaxed">We empower micro-entrepreneurs and SMEs with the financial literacy and technical maintenance skills required to sustain local infrastructure.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative reveal delay-100">
+                    <div class="aspect-square md:aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl relative">
+                        <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&q=80" alt="Workforce Training" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-brand-dark/20 mix-blend-multiply"></div>
+                    </div>
+                    <div class="absolute -bottom-8 -left-8 md:bottom-8 md:-left-12 bg-white p-6 rounded-3xl shadow-xl border border-slate-100 flex items-center gap-4 max-w-xs animate-bounce" style="animation-duration: 3s;">
+                        <div class="w-14 h-14 bg-brand-light rounded-2xl flex items-center justify-center shrink-0">
+                            <i class="fas fa-chart-line text-brand-primary text-2xl"></i>
+                        </div>
+                        <div>
+                            <p class="font-extrabold text-brand-dark text-xl">Systemic Growth</p>
+                            <p class="text-xs font-medium text-slate-500">Empowering a self-sustaining governance framework.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-dark text-slate-300 pt-20 pb-10 border-t-4 border-brand-accent relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-80 h-80 bg-brand-primary/20 rounded-full blur-3xl -mr-32 -mt-32"></div>
+        <div class="max-w-7xl mx-auto px-4 lg:px-8 grid md:grid-cols-12 gap-12 mb-16 relative z-10">
+            
+            <div class="md:col-span-4">
+                <a href="./index.html" class="flex items-center gap-3 mb-6 bg-white/5 p-3 rounded-lg w-fit group">
+                    <img src="./assets/images/logo.png" alt="WaSHVoice logo" class="h-10 w-auto" onerror="this.style.display='none'" />
+                    <span class="font-extrabold text-white text-xl tracking-tight">WaSHVoice <span class="text-brand-accent group-hover:text-brand-light transition-colors">Africa</span></span>
+                </a>
+                <p class="text-sm leading-relaxed text-slate-400 mb-6 max-w-sm">
+                    A purpose-driven social enterprise disrupting traditional service silos through integrated advocacy, sector coordination, and climate action.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-accent hover:text-white transition-all"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-accent hover:text-white transition-all"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-accent hover:text-white transition-all"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="md:col-span-3 md:col-start-6">
+                <h4 class="text-white font-bold mb-6 tracking-wide">Strategy 2025–2027</h4>
+                <ul class="space-y-4 text-xs text-slate-400">
+                    <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-brand-accent shrink-0"></span>Generating $5.50 economic value/$1 invested.</li>
+                    <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-brand-primary shrink-0"></span>Unlocking 10x blended finance matching debt.</li>
+                    <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-sky-500 shrink-0"></span>National Sanitation Database 2.0 by 2027.</li>
+                </ul>
+                <h4 class="text-white font-bold mt-8 mb-4 tracking-wide">Quick Links</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="./index.html" class="hover:text-brand-accent transition-colors">Home</a></li>
+                    <li><a href="./services.html" class="hover:text-brand-accent transition-colors">Our Services</a></li>
+                    <li><a href="./projects.html" class="hover:text-brand-accent transition-colors">Impact & Projects</a></li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-3 md:col-start-10">
+                <h4 class="text-white font-bold mb-6 tracking-wide">Get in Touch</h4>
+                <ul class="space-y-4 text-sm text-slate-400">
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-map-marker-alt text-brand-accent mt-1 shrink-0"></i>
+                        <span>Western Heights, Westlands<br>Nairobi, Kenya</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-phone-alt text-brand-accent shrink-0"></i>
+                        <a href="tel:+254722981370" class="hover:text-white transition-colors">+254 722 981 370</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-envelope text-brand-accent shrink-0"></i>
+                        <a href="mailto:info@washvoiceafrica.org" class="hover:text-white transition-colors">info@washvoiceafrica.org</a>
+                    </li>
+                </ul>
+                
+                <div class="mt-8 border-t border-slate-700 pt-6">
+                    <p class="text-xs text-slate-500 mb-4">Mon – Sat: 8:00 – 17:00<br>Sunday: CLOSED</p>
+                    <div class="flex gap-4 text-brand-accent/50">
+                        <i class="fas fa-certificate text-xl hover:text-brand-accent transition-colors cursor-pointer"></i>
+                        <i class="fas fa-ribbon text-xl hover:text-brand-accent transition-colors cursor-pointer"></i>
+                        <i class="fas fa-water text-xl hover:text-brand-accent transition-colors cursor-pointer"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 lg:px-8 pt-8 border-t border-slate-800 text-center md:text-left flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 relative z-10">
+            <p>&copy; 2026 Water Sanitation and Hygiene Voice (WaSHVoice). All rights reserved.</p>
+            <p class="mt-2 md:mt-0">Designed & Optimized for Systemic Impact.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        const icon = menuBtn.querySelector('i');
+
+        menuBtn.addEventListener('click', () => {
+            mobileNav.classList.toggle('hidden');
+            if(mobileNav.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+
+        // Scroll Reveal Animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach((elem) => {
+            observer.observe(elem);
+        });
+    </script>
+</body>
+</html>

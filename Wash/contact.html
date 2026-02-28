@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth scroll-pt-24">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Contact WaSHVoice Africa. Partner with us to drive evidence-based advocacy and climate-smart sanitation solutions across Kenya." />
+    <title>Contact & Partner | WaSHVoice Africa</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            primary: '#0369a1',
+                            accent: '#0891b2',
+                            light: '#e0f2fe'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Custom form focus styles */
+        .form-input:focus {
+            box-shadow: 0 0 0 4px rgba(8, 145, 178, 0.1);
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 antialiased bg-slate-50 overflow-x-hidden pt-20 lg:pt-0">
+
+    <header class="fixed w-full top-0 z-50 border-b border-slate-200/70 bg-white/95 backdrop-blur-md transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 lg:px-8 h-20 flex items-center justify-between">
+            <a href="./index.html" class="flex items-center gap-3 group shrink-0">
+                <img src="./assets/images/logo.png" alt="WaSHVoice logo" class="h-12 w-auto object-contain" onerror="this.style.display='none'" />
+                <div class="flex flex-col">
+                    <span class="font-extrabold text-brand-dark text-xl tracking-tight group-hover:text-brand-accent transition-colors">WaSHVoice</span>
+                    <span class="text-[10px] font-bold tracking-widest text-slate-500 uppercase">Africa</span>
+                </div>
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
+                <a href="./index.html" class="text-slate-600 hover:text-brand-accent font-medium transition-colors">Home</a>
+                <a href="./about.html" class="text-slate-600 hover:text-brand-accent font-medium transition-colors">About</a>
+                <a href="./services.html" class="text-slate-600 hover:text-brand-accent font-medium transition-colors">Services</a>
+                <a href="./projects.html" class="text-slate-600 hover:text-brand-accent font-medium transition-colors">Projects</a>
+                <a href="./team.html" class="text-slate-600 hover:text-brand-accent font-medium transition-colors">Team</a>
+                <a href="./events.html" class="text-slate-600 hover:text-brand-accent font-medium transition-colors">Events</a>
+                <a href="./gallery.html" class="text-slate-600 hover:text-brand-accent font-medium transition-colors">Gallery</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-4 shrink-0">
+                <div class="hidden xl:flex gap-3 border-r border-slate-300 pr-4">
+                    <a href="#" class="text-slate-400 hover:text-[#1877F2] transition-colors"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-black transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-[#FF0000] transition-colors"><i class="fab fa-youtube"></i></a>
+                </div>
+                
+                <a href="path/to/SanAcc-I-Report.pdf" target="_blank" class="hidden md:flex items-center gap-2 border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white px-4 py-2 rounded-full font-bold transition-all text-sm group">
+                    <i class="fas fa-file-pdf group-hover:animate-bounce"></i> SanAcc I Report
+                </a>
+
+                <a href="./contact.html" class="bg-cyan-600 text-white px-6 py-2.5 rounded-full font-semibold shadow-inner text-sm border-2 border-cyan-500">Partner With Us</a>
+            </div>
+
+            <button id="menuBtn" class="lg:hidden text-slate-700 text-2xl focus:outline-none hover:text-brand-accent transition-colors">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <nav id="mobileNav" class="hidden lg:hidden bg-white border-t border-slate-200 px-4 pt-2 pb-6 absolute w-full shadow-xl">
+            <div class="flex flex-col gap-4 mt-2">
+                <a href="./index.html" class="text-slate-600 text-lg hover:text-brand-accent">Home</a>
+                <a href="./about.html" class="text-slate-600 text-lg hover:text-brand-accent">About</a>
+                <a href="./services.html" class="text-slate-600 text-lg hover:text-brand-accent">Services</a>
+                <a href="./projects.html" class="text-slate-600 text-lg hover:text-brand-accent">Projects</a>
+                <a href="./team.html" class="text-slate-600 text-lg hover:text-brand-accent">Team</a>
+                <a href="./events.html" class="text-slate-600 text-lg hover:text-brand-accent">Events</a>
+                <a href="./gallery.html" class="text-slate-600 text-lg hover:text-brand-accent">Gallery</a>
+                
+                <div class="mt-4 border-t border-slate-100 pt-4 flex flex-col gap-3">
+                    <a href="./contact.html" class="bg-brand-accent text-white text-center px-4 py-3 rounded-xl font-bold">Partner With Us</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="py-16 md:py-24 bg-brand-dark relative mt-20 lg:mt-0 overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-20">
+            <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80" alt="Contact Background" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/90 to-transparent"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 lg:px-8 relative z-10 text-center reveal">
+            <div class="inline-flex items-center gap-2 rounded-full border border-brand-accent/30 bg-brand-accent/10 backdrop-blur-sm px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-brand-light mb-6">
+                <i class="fas fa-handshake text-[10px]"></i> Collaborate & Connect
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight tracking-tight max-w-4xl mx-auto">
+                Let's Transform Kenya's <br class="hidden md:block"/> <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-light">WaSH Ecosystem.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-300 leading-relaxed font-light max-w-2xl mx-auto">
+                Whether you are an institutional investor, a community leader, or a sanitation innovator, we want to hear from you. 
+            </p>
+        </div>
+    </section>
+
+    <section class="relative -mt-10 z-20 px-4 lg:px-8 max-w-7xl mx-auto reveal delay-100">
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white rounded-3xl p-8 shadow-xl border border-slate-100 flex flex-col items-center text-center transform hover:-translate-y-2 transition-transform duration-300">
+                <div class="w-16 h-16 bg-brand-light/40 rounded-2xl flex items-center justify-center mb-6 text-brand-primary">
+                    <i class="fas fa-map-location-dot text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-brand-dark mb-2">Headquarters</h3>
+                <p class="text-slate-600 leading-relaxed">Western Heights, Westlands<br/>Nairobi, Kenya</p>
+            </div>
+            
+            <div class="bg-white rounded-3xl p-8 shadow-xl border border-slate-100 flex flex-col items-center text-center transform hover:-translate-y-2 transition-transform duration-300">
+                <div class="w-16 h-16 bg-cyan-50 rounded-2xl flex items-center justify-center mb-6 text-brand-accent">
+                    <i class="fas fa-headset text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-brand-dark mb-2">Direct Contact</h3>
+                <a href="tel:+254722981370" class="text-slate-600 hover:text-brand-accent font-medium leading-relaxed block transition-colors">+254 722 981 370</a>
+                <a href="mailto:info@washvoiceafrica.org" class="text-slate-600 hover:text-brand-accent font-medium leading-relaxed block transition-colors">info@washvoiceafrica.org</a>
+            </div>
+
+            <div class="bg-white rounded-3xl p-8 shadow-xl border border-slate-100 flex flex-col items-center text-center transform hover:-translate-y-2 transition-transform duration-300">
+                <div class="w-16 h-16 bg-emerald-50 rounded-2xl flex items-center justify-center mb-6 text-emerald-600">
+                    <i class="fas fa-clock text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-brand-dark mb-2">Office Hours</h3>
+                <p class="text-slate-600 leading-relaxed">Mon – Sat: 8:00 AM – 5:00 PM<br/><span class="text-brand-accent font-semibold">Sunday: Closed</span></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-slate-50 relative">
+        <div class="max-w-7xl mx-auto px-4 lg:px-8">
+            <div class="bg-white rounded-[3rem] shadow-2xl overflow-hidden border border-slate-100 reveal">
+                <div class="grid lg:grid-cols-5">
+                    
+                    <div class="lg:col-span-2 bg-brand-dark text-white p-10 md:p-14 relative overflow-hidden flex flex-col justify-between">
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-brand-accent/20 rounded-full blur-3xl -mr-20 -mt-20"></div>
+                        <div class="absolute bottom-0 left-0 w-64 h-64 bg-brand-primary/20 rounded-full blur-3xl -ml-20 -mb-20"></div>
+                        
+                        <div class="relative z-10">
+                            <h2 class="text-3xl font-extrabold mb-6 leading-tight">Partner for Impact.</h2>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-8">
+                                WaSHVoice is scaling. As we drive towards unlocking 10x matching debt through blended finance models, we are actively seeking partnerships to execute our 2025-2027 roadmap.
+                            </p>
+                            
+                            <ul class="space-y-6">
+                                <li class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                                        <i class="fas fa-hand-holding-dollar text-brand-light"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-white mb-1 text-sm">Institutional Investors</h4>
+                                        <p class="text-xs text-slate-400 leading-relaxed">Join the Sanifund catalytic first-loss equity initiative.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                                        <i class="fas fa-flask text-brand-light"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-white mb-1 text-sm">Sanitation Innovators</h4>
+                                        <p class="text-xs text-slate-400 leading-relaxed">Validate your climate-resilient designs via our Sani-Hub.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                                        <i class="fas fa-landmark text-brand-light"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-white mb-1 text-sm">Government & Policy Makers</h4>
+                                        <p class="text-xs text-slate-400 leading-relaxed">Align with our National Sanitation Database (NSD) integration.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="relative z-10 mt-12 pt-8 border-t border-white/10 flex gap-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-accent hover:text-white transition-all"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-accent hover:text-white transition-all"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-accent hover:text-white transition-all"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-3 p-10 md:p-14">
+                        <h3 class="text-2xl font-bold text-brand-dark mb-2">Send us a Message</h3>
+                        <p class="text-slate-500 text-sm mb-8">Fill out the form below and our strategic coordination team will get back to you within 24 hours.</p>
+                        
+                        <form action="#" class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">First Name</label>
+                                    <input type="text" class="form-input w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-slate-700 focus:outline-none focus:border-brand-accent transition-all" placeholder="John" required>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Last Name</label>
+                                    <input type="text" class="form-input w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-slate-700 focus:outline-none focus:border-brand-accent transition-all" placeholder="Doe" required>
+                                </div>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Email Address</label>
+                                    <input type="email" class="form-input w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-slate-700 focus:outline-none focus:border-brand-accent transition-all" placeholder="john@example.com" required>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Organization (Optional)</label>
+                                    <input type="text" class="form-input w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-slate-700 focus:outline-none focus:border-brand-accent transition-all" placeholder="Company / NGO">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Inquiry Type</label>
+                                <select class="form-input w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-slate-700 focus:outline-none focus:border-brand-accent transition-all appearance-none cursor-pointer">
+                                    <option value="" disabled selected>Select an option...</option>
+                                    <option value="partnership">Strategic Partnership / Investment</option>
+                                    <option value="project">Community Project Inquiry</option>
+                                    <option value="media">Media / Press</option>
+                                    <option value="general">General Information</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Your Message</label>
+                                <textarea rows="4" class="form-input w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-slate-700 focus:outline-none focus:border-brand-accent transition-all resize-none" placeholder="How can we collaborate..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full sm:w-auto bg-brand-accent hover:bg-cyan-500 text-white font-bold px-8 py-4 rounded-xl transition-all shadow-lg hover:shadow-cyan-500/40 flex items-center justify-center gap-2">
+                                Send Message <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 lg:px-8 reveal">
+            <div class="rounded-[3rem] overflow-hidden shadow-xl border border-slate-100 h-[400px] relative bg-slate-200">
+                <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80" alt="Nairobi Location" class="w-full h-full object-cover grayscale opacity-70">
+                
+                <div class="absolute inset-0 bg-brand-primary/10 mix-blend-multiply"></div>
+                
+                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center animate-bounce" style="animation-duration: 3s;">
+                    <div class="bg-brand-dark text-white px-4 py-2 rounded-xl text-sm font-bold shadow-2xl mb-2 border border-brand-accent/30 backdrop-blur-sm">
+                        WaSHVoice Headquarters
+                    </div>
+                    <div class="w-10 h-10 bg-brand-accent rounded-full flex items-center justify-center text-white shadow-[0_0_20px_rgba(8,145,178,0.5)] border-4 border-white">
+                        <i class="fas fa-location-dot"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-dark text-slate-300 pt-20 pb-10 border-t-4 border-brand-accent relative overflow-hidden mt-10">
+        <div class="absolute top-0 right-0 w-80 h-80 bg-brand-primary/20 rounded-full blur-3xl -mr-32 -mt-32"></div>
+        <div class="max-w-7xl mx-auto px-4 lg:px-8 grid md:grid-cols-12 gap-12 mb-16 relative z-10">
+            
+            <div class="md:col-span-4">
+                <a href="./index.html" class="flex items-center gap-3 mb-6 bg-white/5 p-3 rounded-lg w-fit group">
+                    <img src="./assets/images/logo.png" alt="WaSHVoice logo" class="h-10 w-auto" onerror="this.style.display='none'" />
+                    <span class="font-extrabold text-white text-xl tracking-tight">WaSHVoice <span class="text-brand-accent group-hover:text-brand-light transition-colors">Africa</span></span>
+                </a>
+                <p class="text-sm leading-relaxed text-slate-400 mb-6 max-w-sm">
+                    A purpose-driven social enterprise disrupting traditional service silos through integrated advocacy, sector coordination, and climate action.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-accent hover:text-white transition-all"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-accent hover:text-white transition-all"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-accent hover:text-white transition-all"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="md:col-span-3 md:col-start-6">
+                <h4 class="text-white font-bold mb-6 tracking-wide">Strategy 2025–2027</h4>
+                <ul class="space-y-4 text-xs text-slate-400">
+                    <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-brand-accent shrink-0"></span>Generating $5.50 economic value/$1 invested.</li>
+                    <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-brand-primary shrink-0"></span>Unlocking 10x blended finance matching debt.</li>
+                    <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-sky-500 shrink-0"></span>National Sanitation Database 2.0 by 2027.</li>
+                </ul>
+                <h4 class="text-white font-bold mt-8 mb-4 tracking-wide">Quick Links</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="./index.html" class="hover:text-brand-accent transition-colors">Home</a></li>
+                    <li><a href="./services.html" class="hover:text-brand-accent transition-colors">Our Services</a></li>
+                    <li><a href="./projects.html" class="hover:text-brand-accent transition-colors">Impact & Projects</a></li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-3 md:col-start-10">
+                <h4 class="text-white font-bold mb-6 tracking-wide">Get in Touch</h4>
+                <ul class="space-y-4 text-sm text-slate-400">
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-map-marker-alt text-brand-accent mt-1 shrink-0"></i>
+                        <span>Western Heights, Westlands<br>Nairobi, Kenya</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-phone-alt text-brand-accent shrink-0"></i>
+                        <a href="tel:+254722981370" class="hover:text-white transition-colors">+254 722 981 370</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-envelope text-brand-accent shrink-0"></i>
+                        <a href="mailto:info@washvoiceafrica.org" class="hover:text-white transition-colors">info@washvoiceafrica.org</a>
+                    </li>
+                </ul>
+                
+                <div class="mt-8 border-t border-slate-700 pt-6">
+                    <p class="text-xs text-slate-500 mb-4">Mon – Sat: 8:00 – 17:00<br>Sunday: CLOSED</p>
+                    <div class="flex gap-4 text-brand-accent/50">
+                        <i class="fas fa-certificate text-xl hover:text-brand-accent transition-colors cursor-pointer"></i>
+                        <i class="fas fa-ribbon text-xl hover:text-brand-accent transition-colors cursor-pointer"></i>
+                        <i class="fas fa-water text-xl hover:text-brand-accent transition-colors cursor-pointer"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 lg:px-8 pt-8 border-t border-slate-800 text-center md:text-left flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 relative z-10">
+            <p>&copy; 2026 Water Sanitation and Hygiene Voice (WaSHVoice). All rights reserved.</p>
+            <p class="mt-2 md:mt-0">Designed & Optimized for Systemic Impact.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        const icon = menuBtn.querySelector('i');
+
+        menuBtn.addEventListener('click', () => {
+            mobileNav.classList.toggle('hidden');
+            if(mobileNav.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+
+        // Scroll Reveal Animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach((elem) => {
+            observer.observe(elem);
+        });
+    </script>
+</body>
+</html>

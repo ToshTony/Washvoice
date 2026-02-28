@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth scroll-pt-24">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="WaSHVoice Africa Events: Join our upcoming symposiums, workshops, and review our past engagements across the WaSH sector." />
+    <title>Events & Engagements | WaSHVoice Africa</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            primary: '#0369a1',
+                            accent: '#0891b2',
+                            light: '#e0f2fe'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Event card hover effect */
+        .event-card:hover .event-img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 antialiased bg-slate-50 overflow-x-hidden pt-20 lg:pt-0">
+
+    <header class="fixed w-full top-0 z-50 border-b border-slate-200/70 bg-white/95 backdrop-blur-md transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 lg:px-8 h-20 flex items-center justify-between">
+            <a href="./index.html" class="flex items-center gap-3 group shrink-0">
+                <img src="./assets/images/logo.png" alt="WaSHVoice logo" class="h-12 w-auto object-contain" onerror="this.style.display='none'" />
+                <div class="flex flex-col">
+                    <span class="font-extrabold text-brand-dark text-xl tracking-tight group-hover:text-brand-accent transition-colors">WaSHVoice</span>
+                    <span class="text-[10px] font-bold tracking-widest text-slate-500 uppercase">Africa</span>
+                </div>
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
+                <a href="./index.html" class="text-slate-600 hover:text-brand-accent font-medium transition-colors">Home</a>
+                <a href="./about.html" class="text-slate-600 hover:text-brand-accent font-medium transition-colors">About</a>
+                <a href="./services.html" class="text-slate-600 hover:text-brand-accent font-medium transition-colors">Services</a>
+                <a href="./projects.html" class="text-slate-600 hover:text-brand-accent font-medium transition-colors">Projects</a>
+                <a href="./team.html" class="text-slate-600 hover:text-brand-accent font-medium transition-colors">Team</a>
+                <a href="./events.html" class="text-brand-accent font-semibold border-b-2 border-brand-accent pb-1">Events</a>
+                <a href="./gallery.html" class="text-slate-600 hover:text-brand-accent font-medium transition-colors">Gallery</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-4 shrink-0">
+                <div class="hidden xl:flex gap-3 border-r border-slate-300 pr-4">
+                    <a href="#" class="text-slate-400 hover:text-[#1877F2] transition-colors"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-black transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-[#FF0000] transition-colors"><i class="fab fa-youtube"></i></a>
+                </div>
+                
+                <a href="path/to/SanAcc-I-Report.pdf" target="_blank" class="hidden md:flex items-center gap-2 border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white px-4 py-2 rounded-full font-bold transition-all text-sm group">
+                    <i class="fas fa-file-pdf group-hover:animate-bounce"></i> SanAcc I Report
+                </a>
+
+                <a href="#register" class="bg-brand-accent hover:bg-cyan-500 text-white px-6 py-2.5 rounded-full font-semibold transition-all shadow-md hover:shadow-lg text-sm">Register Now</a>
+            </div>
+
+            <button id="menuBtn" class="lg:hidden text-slate-700 text-2xl focus:outline-none hover:text-brand-accent transition-colors">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <nav id="mobileNav" class="hidden lg:hidden bg-white border-t border-slate-200 px-4 pt-2 pb-6 absolute w-full shadow-xl">
+            <div class="flex flex-col gap-4 mt-2">
+                <a href="./index.html" class="text-slate-600 text-lg hover:text-brand-accent">Home</a>
+                <a href="./about.html" class="text-slate-600 text-lg hover:text-brand-accent">About</a>
+                <a href="./services.html" class="text-slate-600 text-lg hover:text-brand-accent">Services</a>
+                <a href="./projects.html" class="text-slate-600 text-lg hover:text-brand-accent">Projects</a>
+                <a href="./team.html" class="text-slate-600 text-lg hover:text-brand-accent">Team</a>
+                <a href="./events.html" class="text-brand-accent font-semibold text-lg">Events</a>
+                <a href="./gallery.html" class="text-slate-600 text-lg hover:text-brand-accent">Gallery</a>
+                
+                <div class="mt-4 border-t border-slate-100 pt-4 flex flex-col gap-3">
+                    <a href="#register" class="bg-brand-accent text-white text-center px-4 py-3 rounded-xl font-bold">Event Registration</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="py-16 md:py-24 bg-brand-dark relative mt-20 lg:mt-0 overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-30">
+            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80" alt="Events Background" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/90 to-transparent"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 lg:px-8 relative z-10 text-center reveal">
+            <div class="inline-flex items-center gap-2 rounded-full border border-brand-accent/30 bg-brand-accent/10 backdrop-blur-sm px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-brand-light mb-6">
+                <i class="far fa-calendar-alt text-[10px]"></i> Symposiums & Gatherings
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight tracking-tight max-w-4xl mx-auto">
+                Knowledge Hub <br class="hidden md:block"/> <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-light">& Sector Engagements.</span>
+            </h1>
+            
+            <div class="max-w-3xl mx-auto bg-white/5 border border-white/10 p-6 md:p-8 rounded-3xl backdrop-blur-md mb-8">
+                <p class="text-lg md:text-xl text-brand-light leading-relaxed font-light italic">
+                    "The greatest good you can do for another is not just share your riches, but to reveal to him his own."
+                </p>
+                <p class="text-sm text-slate-400 mt-4 font-semibold uppercase tracking-widest">— Benjamin Disraeli</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white relative border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 reveal">
+                <div>
+                    <h4 class="text-brand-accent font-bold tracking-widest uppercase text-sm mb-2">Join the Movement</h4>
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-brand-dark tracking-tight">Upcoming Events.</h2>
+                </div>
+                <a href="#register" class="mt-4 md:mt-0 inline-flex items-center gap-2 bg-brand-primary text-white px-6 py-3 rounded-full font-bold hover:bg-brand-dark transition-colors text-sm">
+                    Book Your Seat <i class="fas fa-arrow-down"></i>
+                </a>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8 reveal delay-100">
+                <div class="bg-slate-50 rounded-[2rem] border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col sm:flex-row overflow-hidden group">
+                    <div class="sm:w-2/5 h-48 sm:h-auto relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1475721025505-c4125b274c43?auto=format&fit=crop&q=80" alt="Symposium" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute top-4 left-4 bg-brand-accent text-white px-3 py-1 rounded-lg text-center shadow-lg">
+                            <span class="block text-2xl font-black leading-none">25</span>
+                            <span class="block text-xs font-bold uppercase tracking-wider">April</span>
+                        </div>
+                    </div>
+                    <div class="sm:w-3/5 p-6 md:p-8 flex flex-col justify-center">
+                        <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">
+                            <i class="fas fa-map-marker-alt text-brand-primary"></i> Nairobi, Kenya
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-dark mb-3">SanAcc II (2025) Validation Symposium</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">Join sector leaders as we unveil the empirical findings of the Sanitation Accountability (SanAcc) II Report.</p>
+                        <a href="#register" class="text-brand-accent font-semibold text-sm hover:text-brand-primary flex items-center gap-2 w-fit">Register Now <i class="fas fa-arrow-right text-xs"></i></a>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 rounded-[2rem] border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col sm:flex-row overflow-hidden group">
+                    <div class="sm:w-2/5 h-48 sm:h-auto relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80" alt="Workshop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute top-4 left-4 bg-brand-primary text-white px-3 py-1 rounded-lg text-center shadow-lg">
+                            <span class="block text-2xl font-black leading-none">12</span>
+                            <span class="block text-xs font-bold uppercase tracking-wider">Aug</span>
+                        </div>
+                    </div>
+                    <div class="sm:w-3/5 p-6 md:p-8 flex flex-col justify-center">
+                        <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">
+                            <i class="fas fa-map-marker-alt text-brand-primary"></i> KEWI Headquarters
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-dark mb-3">Sani-Entrepreneurship Hub Workshop</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">A capacity-building session empowering micro-entrepreneurs on financial literacy and sanitation technology maintenance.</p>
+                        <a href="#register" class="text-brand-accent font-semibold text-sm hover:text-brand-primary flex items-center gap-2 w-fit">Register Now <i class="fas fa-arrow-right text-xs"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-slate-100 relative">
+        <div class="max-w-7xl mx-auto px-4 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <h4 class="text-slate-500 font-bold tracking-widest uppercase text-sm mb-3">Our Track Record</h4>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-brand-dark mb-6 tracking-tight">Past Engagements.</h2>
+                <p class="text-lg text-slate-600 leading-relaxed">A look back at our pivotal role in coordinating sector actors, validating reports, and driving international WaSH discourse.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 reveal delay-100">
+                
+                <div class="bg-white rounded-[2rem] border border-slate-200 shadow-md overflow-hidden event-card group">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?auto=format&fit=crop&q=80" alt="Africa Sanitation Conference" class="w-full h-full object-cover event-img transition-transform duration-700 grayscale group-hover:grayscale-0">
+                        <div class="absolute inset-0 bg-brand-dark/40 group-hover:bg-brand-dark/10 transition-colors"></div>
+                        <div class="absolute bottom-4 left-4 bg-brand-dark/80 backdrop-blur text-white px-3 py-1.5 rounded-lg text-xs font-semibold">
+                            6th – 11th Nov 2023
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-xs font-bold text-brand-accent uppercase tracking-wider mb-2">Swakopmund, Namibia</p>
+                        <h3 class="text-lg font-bold text-brand-dark mb-3 leading-snug">7th Africa Sanitation Conference</h3>
+                        <p class="text-slate-600 text-sm line-clamp-2">WaSHVoice represented Kenya's commitment to inclusive sanitation frameworks at this major continental summit.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-[2rem] border border-slate-200 shadow-md overflow-hidden event-card group">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?auto=format&fit=crop&q=80" alt="Report Validation" class="w-full h-full object-cover event-img transition-transform duration-700 grayscale group-hover:grayscale-0">
+                        <div class="absolute inset-0 bg-brand-dark/40 group-hover:bg-brand-dark/10 transition-colors"></div>
+                        <div class="absolute bottom-4 left-4 bg-brand-dark/80 backdrop-blur text-white px-3 py-1.5 rounded-lg text-xs font-semibold">
+                            26th – 27th April 2023
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-xs font-bold text-brand-accent uppercase tracking-wider mb-2">KEWI, Nairobi</p>
+                        <h3 class="text-lg font-bold text-brand-dark mb-3 leading-snug">SanAccs Report Validation Workshop & Symposium</h3>
+                        <p class="text-slate-600 text-sm line-clamp-2">A foundational gathering at the Kenya Water Institute validating the data that drives our advocacy.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-[2rem] border border-slate-200 shadow-md overflow-hidden event-card group">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1559223607-a43c990c692c?auto=format&fit=crop&q=80" alt="WASPA Conference" class="w-full h-full object-cover event-img transition-transform duration-700 grayscale group-hover:grayscale-0">
+                        <div class="absolute inset-0 bg-brand-dark/40 group-hover:bg-brand-dark/10 transition-colors"></div>
+                        <div class="absolute bottom-4 left-4 bg-brand-dark/80 backdrop-blur text-white px-3 py-1.5 rounded-lg text-xs font-semibold">
+                            Mombasa, Kenya
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-xs font-bold text-brand-accent uppercase tracking-wider mb-2">WASPA</p>
+                        <h3 class="text-lg font-bold text-brand-dark mb-3 leading-snug">Sanitation Pavilion in WASPA International Conference</h3>
+                        <p class="text-slate-600 text-sm line-clamp-2">Connecting diverse knowledge in strategic management alongside major water service providers.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-[2rem] border border-slate-200 shadow-md overflow-hidden event-card group">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1542621334-a254cf47733d?auto=format&fit=crop&q=80" alt="Stakeholders Meeting" class="w-full h-full object-cover event-img transition-transform duration-700 grayscale group-hover:grayscale-0">
+                        <div class="absolute inset-0 bg-brand-dark/40 group-hover:bg-brand-dark/10 transition-colors"></div>
+                        <div class="absolute bottom-4 left-4 bg-brand-dark/80 backdrop-blur text-white px-3 py-1.5 rounded-lg text-xs font-semibold">
+                            12th Oct 2023
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-xs font-bold text-brand-accent uppercase tracking-wider mb-2">KEWASNEP</p>
+                        <h3 class="text-lg font-bold text-brand-dark mb-3 leading-snug">Sectors Stakeholders Meeting on Water & Sanitation Act</h3>
+                        <p class="text-slate-600 text-sm line-clamp-2">Critical policy alignment and advocacy regarding the new national Water and Sanitation Act.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-[2rem] border border-slate-200 shadow-md overflow-hidden event-card group">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80" alt="Innovate for WASH" class="w-full h-full object-cover event-img transition-transform duration-700 grayscale group-hover:grayscale-0">
+                        <div class="absolute inset-0 bg-brand-dark/40 group-hover:bg-brand-dark/10 transition-colors"></div>
+                        <div class="absolute bottom-4 left-4 bg-brand-dark/80 backdrop-blur text-white px-3 py-1.5 rounded-lg text-xs font-semibold">
+                            Naivasha, Kenya
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-xs font-bold text-brand-accent uppercase tracking-wider mb-2">Innovation Hub</p>
+                        <h3 class="text-lg font-bold text-brand-dark mb-3 leading-snug">Innovate for WASH</h3>
+                        <p class="text-slate-600 text-sm line-clamp-2">A gathering of technologists, innovators, and sector leaders focused on climate-smart WaSH solutions.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-[2rem] border border-slate-200 shadow-md overflow-hidden event-card group">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80" alt="Webinars" class="w-full h-full object-cover event-img transition-transform duration-700 grayscale group-hover:grayscale-0">
+                        <div class="absolute inset-0 bg-brand-dark/40 group-hover:bg-brand-dark/10 transition-colors"></div>
+                        <div class="absolute bottom-4 left-4 bg-brand-dark/80 backdrop-blur text-white px-3 py-1.5 rounded-lg text-xs font-semibold">
+                            Virtual Series
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-xs font-bold text-brand-accent uppercase tracking-wider mb-2">Online</p>
+                        <h3 class="text-lg font-bold text-brand-dark mb-3 leading-snug">2022 Sanitation Accountability Webinars</h3>
+                        <p class="text-slate-600 text-sm line-clamp-2">A dedicated digital series expanding our advocacy reach to international partners and donors.</p>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="./gallery.html" class="inline-flex items-center gap-2 text-brand-primary font-bold hover:text-brand-accent transition-colors">
+                    View Complete Event Gallery <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="register" class="py-24 bg-brand-dark relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <div class="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-brand-primary/20 to-transparent"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-5 gap-12 lg:gap-20 items-center reveal">
+                
+                <div class="lg:col-span-2">
+                    <div class="inline-flex items-center gap-2 rounded-full border border-brand-accent/30 bg-brand-accent/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-brand-light mb-6">
+                        <i class="fas fa-ticket-alt"></i> Secure Your Spot
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">Event Registration.</h2>
+                    <p class="text-slate-300 leading-relaxed mb-8">
+                        Join sector leaders, donors, and community advocates at our next major symposium. Fill out the form to register as an individual or organization.
+                    </p>
+                    
+                    <div class="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-md">
+                        <h4 class="text-white font-bold mb-4 flex items-center gap-2"><i class="fas fa-wallet text-brand-accent"></i> Payment Details</h4>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex items-center justify-between border-b border-white/10 pb-2">
+                                <span class="text-slate-400">Method:</span>
+                                <span class="text-brand-light font-bold">M-Pesa Paybill</span>
+                            </div>
+                            <div class="flex items-center justify-between border-b border-white/10 pb-2">
+                                <span class="text-slate-400">Paybill No:</span>
+                                <span class="text-white font-mono font-bold text-lg tracking-wider">522522</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-slate-400">Account:</span>
+                                <span class="text-white font-mono font-bold text-lg tracking-wider">7970372</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-3">
+                    <div class="bg-white rounded-[2rem] p-8 md:p-10 shadow-2xl relative">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-brand-accent/10 rounded-bl-[4rem] rounded-tr-[2rem]"></div>
+                        
+                        <form action="#" class="space-y-6 relative z-10">
+                            <div class="flex gap-6 mb-6">
+                                <label class="flex items-center gap-2 cursor-pointer">
+                                    <input type="radio" name="reg_type" value="individual" class="w-4 h-4 text-brand-accent focus:ring-brand-accent" checked>
+                                    <span class="text-sm font-bold text-brand-dark">Individual</span>
+                                </label>
+                                <label class="flex items-center gap-2 cursor-pointer">
+                                    <input type="radio" name="reg_type" value="organization" class="w-4 h-4 text-brand-accent focus:ring-brand-accent">
+                                    <span class="text-sm font-bold text-brand-dark">Organization</span>
+                                </label>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Full Name / Org Name</label>
+                                    <input type="text" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-700 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-colors" placeholder="John Doe">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Email Address</label>
+                                    <input type="email" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-700 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-colors" placeholder="john@example.com">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Phone Number</label>
+                                    <input type="tel" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-700 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-colors" placeholder="+254 700 000 000">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Number of Attendees</label>
+                                    <input type="number" min="1" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-700 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-colors" placeholder="1">
+                                </div>
+                            </div>
+
+                            <div class="border-t border-slate-100 pt-6 mt-6">
+                                <h4 class="text-sm font-bold text-brand-dark mb-4">Payment Verification</h4>
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">M-Pesa Transaction Code</label>
+                                        <input type="text" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-700 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-colors font-mono uppercase" placeholder="e.g. QWX12345YZ">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Date of Payment</label>
+                                        <input type="date" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-700 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-colors">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="button" class="w-full bg-brand-accent hover:bg-brand-primary text-white font-bold text-lg py-4 rounded-xl transition-colors shadow-lg mt-6">
+                                Submit Registration
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-dark text-slate-300 pt-20 pb-10 border-t-4 border-brand-accent relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-80 h-80 bg-brand-primary/20 rounded-full blur-3xl -mr-32 -mt-32"></div>
+        <div class="max-w-7xl mx-auto px-4 lg:px-8 grid md:grid-cols-12 gap-12 mb-16 relative z-10">
+            
+            <div class="md:col-span-4">
+                <a href="./index.html" class="flex items-center gap-3 mb-6 bg-white/5 p-3 rounded-lg w-fit group">
+                    <img src="./assets/images/logo.png" alt="WaSHVoice logo" class="h-10 w-auto" onerror="this.style.display='none'" />
+                    <span class="font-extrabold text-white text-xl tracking-tight">WaSHVoice <span class="text-brand-accent group-hover:text-brand-light transition-colors">Africa</span></span>
+                </a>
+                <p class="text-sm leading-relaxed text-slate-400 mb-6 max-w-sm">
+                    A purpose-driven social enterprise disrupting traditional service silos through integrated advocacy, sector coordination, and climate action.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-accent hover:text-white transition-all"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-accent hover:text-white transition-all"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-accent hover:text-white transition-all"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="md:col-span-3 md:col-start-6">
+                <h4 class="text-white font-bold mb-6 tracking-wide">Strategy 2025–2027</h4>
+                <ul class="space-y-4 text-xs text-slate-400">
+                    <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-brand-accent shrink-0"></span>Generating $5.50 economic value/$1 invested.</li>
+                    <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-brand-primary shrink-0"></span>Unlocking 10x blended finance matching debt.</li>
+                    <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-sky-500 shrink-0"></span>National Sanitation Database 2.0 by 2027.</li>
+                </ul>
+                <h4 class="text-white font-bold mt-8 mb-4 tracking-wide">Quick Links</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="./index.html" class="hover:text-brand-accent transition-colors">Home</a></li>
+                    <li><a href="./services.html" class="hover:text-brand-accent transition-colors">Our Services</a></li>
+                    <li><a href="./projects.html" class="hover:text-brand-accent transition-colors">Impact & Projects</a></li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-3 md:col-start-10">
+                <h4 class="text-white font-bold mb-6 tracking-wide">Get in Touch</h4>
+                <ul class="space-y-4 text-sm text-slate-400">
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-map-marker-alt text-brand-accent mt-1 shrink-0"></i>
+                        <span>Western Heights, Westlands<br>Nairobi, Kenya</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-phone-alt text-brand-accent shrink-0"></i>
+                        <a href="tel:+254722981370" class="hover:text-white transition-colors">+254 722 981 370</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-envelope text-brand-accent shrink-0"></i>
+                        <a href="mailto:info@washvoiceafrica.org" class="hover:text-white transition-colors">info@washvoiceafrica.org</a>
+                    </li>
+                </ul>
+                
+                <div class="mt-8 border-t border-slate-700 pt-6">
+                    <p class="text-xs text-slate-500 mb-4">Mon – Sat: 8:00 – 17:00<br>Sunday: CLOSED</p>
+                    <div class="flex gap-4 text-brand-accent/50">
+                        <i class="fas fa-certificate text-xl hover:text-brand-accent transition-colors cursor-pointer"></i>
+                        <i class="fas fa-ribbon text-xl hover:text-brand-accent transition-colors cursor-pointer"></i>
+                        <i class="fas fa-water text-xl hover:text-brand-accent transition-colors cursor-pointer"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 lg:px-8 pt-8 border-t border-slate-800 text-center md:text-left flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 relative z-10">
+            <p>&copy; 2026 Water Sanitation and Hygiene Voice (WaSHVoice). All rights reserved.</p>
+            <p class="mt-2 md:mt-0">Designed & Optimized for Systemic Impact.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        const icon = menuBtn.querySelector('i');
+
+        menuBtn.addEventListener('click', () => {
+            mobileNav.classList.toggle('hidden');
+            if(mobileNav.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+
+        // Scroll Reveal Animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach((elem) => {
+            observer.observe(elem);
+        });
+    </script>
+</body>
+</html>
